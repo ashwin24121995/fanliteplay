@@ -1,0 +1,9 @@
+{
+  "projectId": "prj_fanliteplay",
+  "orgId": "team_n7FbF69Eq4LPUWgrDjrqg2Vt",
+  "settings": {
+    "buildCommand": "echo 'Static site'",
+    "outputDirectory": ".",
+    "cleanUrls": true
+  }
+}
