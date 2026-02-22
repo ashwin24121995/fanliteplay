@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Play - FanLitePlay</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #0f1419; }
+    
+    .top-strip { background: linear-gradient(90deg, rgba(20,184,166,0.1), rgba(168,85,247,0.1)); padding: 10px 0; border-bottom: 1px solid #e5e7eb; }
+    .strip-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding: 0 20px; }
+    .strip-badge { color: #14b8a6; font-weight: 700; }
+    .live-dot { width: 8px; height: 8px; background: #10b981; border-radius: 50%; display: inline-block; margin-right: 6px; box-shadow: 0 0 10px #10b981; }
+    .strip-link { color: #a855f7; font-weight: 600; text-decoration: none; }
+
+    header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: #0f1419; }
+    .logo-img { width: 48px; height: 48px; background: linear-gradient(135deg, #14b8a6, #a855f7); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem; }
+    .brand-title b { font-size: 1.2rem; }
+    .brand-title span { font-size: 0.75rem; color: #8892a8; display: block; }
+    
+    .navlinks { display: flex; gap: 2rem; align-items: center; }
+    .navlinks a { color: #4a5568; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: color 0.2s; }
+    .navlinks a:hover { color: #14b8a6; }
+    .navlinks a.active { color: #a855f7; }
+
+    .nav-cta { display: flex; gap: 0.75rem; align-items: center; }
+    .btn { padding: 0.6rem 1rem; border-radius: 8px; border: none; font-weight: 600; font-size: 0.9rem; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+    .btn.secondary { background: #eef2f8; color: #0f1419; border: 1px solid #e5e7eb; }
+    .btn.secondary:hover { background: #e5e7eb; }
+    .btn.primary { background: linear-gradient(135deg, #14b8a6, #a855f7); color: white; }
+    .btn.primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    .page-hero { padding: 80px 0; background: linear-gradient(135deg, #ffffff 0%, #d4f8f5 100%); }
+    .page-hero h1 { font-size: 3rem; margin-bottom: 20px; font-weight: 800; }
+    .page-hero p { font-size: 1.1rem; color: #4a5568; max-width: 700px; }
+
+    .section { padding: 80px 0; }
+    .section-head { text-align: center; margin-bottom: 60px; }
+    .section-head h2 { font-size: 2.8rem; margin-bottom: 16px; font-weight: 800; }
+    .section-head p { font-size: 1.05rem; color: #4a5568; max-width: 650px; margin: 0 auto; }
+
+    .steps { display: grid; grid-template-columns: 1fr; gap: 40px; }
+    .step-item { display: grid; grid-template-columns: 120px 1fr; gap: 40px; align-items: start; }
+    .step-number { width: 120px; height: 120px; background: linear-gradient(135deg, #14b8a6, #a855f7); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: white; font-weight: 800; }
+    .step-content h3 { font-size: 1.8rem; margin-bottom: 16px; font-weight: 700; }
+    .step-content p { color: #4a5568; margin-bottom: 16px; }
+    .step-content ul { margin-left: 24px; }
+    .step-content li { margin-bottom: 12px; color: #4a5568; }
+
+    .tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .tip-card { background: #f5f7fa; padding: 30px; border-radius: 12px; border: 1px solid #e5e7eb; }
+    .tip-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .tip-card h4 { margin-bottom: 12px; font-size: 1.1rem; }
+    .tip-card p { color: #4a5568; font-size: 0.95rem; }
+
+    footer { background: linear-gradient(135deg, #0f1419 0%, #1a202c 100%); color: #e5e7eb; padding: 80px 0 40px; margin-top: 80px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-brand { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; }
+    .footer-logo { width: 48px; height: 48px; background: linear-gradient(135deg, #14b8a6, #a855f7); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
+    .footer-brand b { font-size: 1.25rem; color: white; display: block; }
+    .footer-brand span { font-size: 0.8rem; color: #9ca3af; display: block; }
+    .footer-note { font-size: 0.95rem; color: #d1d5db; line-height: 1.6; margin-bottom: 24px; }
+    .footer-col h4 { margin-bottom: 24px; color: white; font-size: 1.05rem; font-weight: 700; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-link { display: block; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #d1d5db; text-decoration: none; transition: all 0.2s; font-size: 0.9rem; }
+    .footer-link:hover { background: rgba(20,184,166,0.1); border-color: #14b8a6; color: #14b8a6; transform: translateX(4px); }
+
+    .disclaimer-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+    .disclaimer-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 28px; }
+    .disclaimer-box h5 { color: #14b8a6; margin-bottom: 12px; font-size: 1.05rem; font-weight: 700; }
+    .disclaimer-box p { color: #d1d5db; font-size: 0.95rem; margin: 0; line-height: 1.6; }
+
+    .footer-bottom { text-align: center; color: #9ca3af; font-size: 0.9rem; padding-top: 32px; }
+    .footer-mini { margin-top: 12px; font-size: 0.8rem; opacity: 0.7; }
+    .footer-mini a { color: #14b8a6; text-decoration: none; }
+    .footer-mini a:hover { color: #a855f7; }
+
+    @media (max-width: 1024px) {
+      .tips-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .step-item { grid-template-columns: 1fr; }
+      .step-number { width: 100%; }
+    }
+
+    @media (max-width: 768px) {
+      .navlinks, .nav-cta { display: none; }
+      .page-hero h1 { font-size: 2rem; }
+      .tips-grid, .footer-grid, .disclaimer-boxes { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="strip-inner">
+      <div class="strip-badge">
+        <span class="live-dot"></span>
+        100% Free-to-Play
+      </div>
+      <div style="color: #4a5568;">No Real Money • No Prizes • No Wallet • Educational & Entertainment • 18+ Only</div>
+      <a href="terms.html" class="strip-link">Read Policies</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <a href="../index.html" class="brand">
+        <div class="logo-img">⚡</div>
+        <div class="brand-title">
+          <b>FanLitePlay</b>
+          <span>Cricket Entertainment</span>
+        </div>
+      </a>
+      
+      <div class="navlinks">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="how-to-play.html" class="active">How to Play</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="contact.html" class="btn secondary">Support</a>
+        <a href="#" class="btn secondary">Login</a>
+        <a href="#" class="btn primary">Play Free</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>How to Play FanLitePlay</h1>
+      <p>Master the game in 5 simple steps. Learn the fundamentals and start competing today.</p>
+    </div>
+  </section>
+
+  <!-- Detailed Steps -->
+  <section class="section">
+    <div class="container">
+      <div class="steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Create Your Account</h3>
+            <p>Sign up with your email and verify your age (18+ only). This ensures a safe and compliant community for adult players.</p>
+            <ul>
+              <li>Enter valid email address</li>
+              <li>Create secure password</li>
+              <li>Verify age with ID</li>
+              <li>Accept terms and conditions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Select a Match</h3>
+            <p>Browse upcoming cricket matches and contests. Choose the match you want to participate in based on difficulty and timing.</p>
+            <ul>
+              <li>View match schedule</li>
+              <li>Check match details</li>
+              <li>Review player pools</li>
+              <li>Select your match</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Build Your Team</h3>
+            <p>Select 11 players within your credit limit. Balance your team with batsmen, bowlers, and all-rounders for optimal performance.</p>
+            <ul>
+              <li>Choose 11 players total</li>
+              <li>Stay within credit budget</li>
+              <li>Balance team roles</li>
+              <li>Review team composition</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Set Captain & Vice-Captain</h3>
+            <p>Choose your captain (2x points) and vice-captain (1.5x points). Strategic selection here can make the difference between winning and losing.</p>
+            <ul>
+              <li>Select captain (2x multiplier)</li>
+              <li>Select vice-captain (1.5x multiplier)</li>
+              <li>Consider match conditions</li>
+              <li>Finalize selections</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Compete & Track Scores</h3>
+            <p>Watch the match live, track your team's performance, and compete on leaderboards. Learn from every match and improve your strategy.</p>
+            <ul>
+              <li>Watch live match updates</li>
+              <li>Track real-time scores</li>
+              <li>View leaderboard rankings</li>
+              <li>Analyze performance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pro Tips -->
+  <section class="section" style="background: #f5f7fa;">
+    <div class="container">
+      <div class="section-head">
+        <h2>Pro Tips to Win</h2>
+        <p>Expert strategies to improve your game</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">📊</div>
+          <h4>Analyze Form</h4>
+          <p>Study recent player performances, batting averages, and bowling figures before making selections.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🏟️</div>
+          <h4>Consider Venue</h4>
+          <p>Different grounds favor different playing styles. Research pitch conditions and weather forecasts.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">⚖️</div>
+          <h4>Balance Your Team</h4>
+          <p>Mix experienced players with emerging talents. Don't spend all credits on star players.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🎯</div>
+          <h4>Captain Selection</h4>
+          <p>Choose captains who are in form and likely to play full matches. This multiplier matters!</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">📱</div>
+          <h4>Stay Updated</h4>
+          <p>Follow team news, injury updates, and last-minute changes before match start time.</p>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🔄</div>
+          <h4>Learn & Adapt</h4>
+          <p>Review your past teams, analyze what worked, and continuously improve your strategy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <div class="footer-logo">⚡</div>
+            <div>
+              <b>FanLitePlay</b>
+              <span>Cricket Entertainment</span>
+            </div>
+          </div>
+          <p class="footer-note">FanLitePlay is a free-to-play cricket entertainment platform designed for skill development and practice.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="how-to-play.html" class="footer-link">How to Play</a>
+            <a href="../index.html#faq" class="footer-link">FAQ</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="#" class="footer-link">Help Center</a>
+            <a href="mailto:support@fanliteplay.com" class="footer-link">support@fanliteplay.com</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Fair Play Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="disclaimer-boxes">
+        <div class="disclaimer-box">
+          <h5>🔐 Age Verification</h5>
+          <p>FanLitePlay is restricted to users 18 years and above. Mandatory age verification during registration ensures compliance.</p>
+        </div>
+        <div class="disclaimer-box">
+          <h5>🎮 Responsible Gaming</h5>
+          <p>FanLitePlay promotes responsible gaming practices. This is a practice platform with no real money involved.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 FanLitePlay. All rights reserved.</p>
+        <div class="footer-mini">
+          <a href="terms.html">Terms & Conditions</a> • 
+          <a href="privacy.html">Privacy Policy</a> • 
+          <a href="#">Fair Play Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
