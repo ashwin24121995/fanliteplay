@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support - FanLitePlay</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #0f1419; }
+    
+    header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: #0f1419; }
+    .logo-img { width: 48px; height: 48px; background: linear-gradient(135deg, #14b8a6, #a855f7); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem; }
+    .brand-title b { font-size: 1.2rem; }
+    .brand-title span { font-size: 0.75rem; color: #8892a8; display: block; }
+    
+    .navlinks { display: flex; gap: 2rem; align-items: center; }
+    .navlinks a { color: #4a5568; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: color 0.2s; }
+    .navlinks a:hover { color: #14b8a6; }
+    .navlinks a.active { color: #a855f7; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    .page-header { background: linear-gradient(135deg, #14b8a6, #a855f7); color: white; padding: 60px 0; text-align: center; }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 16px; font-weight: 800; }
+    .page-header p { font-size: 1.1rem; opacity: 0.95; }
+
+    .section { padding: 80px 0; }
+    .section-head { text-align: center; margin-bottom: 60px; }
+    .section-head h2 { font-size: 2.2rem; margin-bottom: 16px; font-weight: 800; }
+    .section-head p { font-size: 1rem; color: #4a5568; max-width: 650px; margin: 0 auto; }
+
+    .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
+    .support-card { background: #f5f7fa; padding: 40px; border-radius: 12px; border: 1px solid #e5e7eb; text-align: center; transition: all 0.3s; }
+    .support-card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-color: #14b8a6; }
+    .support-card .icon { font-size: 3rem; margin-bottom: 16px; }
+    .support-card h3 { margin-bottom: 12px; font-size: 1.3rem; font-weight: 700; }
+    .support-card p { color: #4a5568; margin-bottom: 20px; }
+    .support-card a { color: #a855f7; font-weight: 600; text-decoration: none; }
+    .support-card a:hover { color: #14b8a6; }
+
+    .faq-section { background: #f5f7fa; padding: 60px 0; }
+    .faq-item { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 20px; }
+    .faq-item h4 { margin-bottom: 12px; font-size: 1.1rem; color: #0f1419; font-weight: 700; }
+    .faq-item p { color: #4a5568; font-size: 0.95rem; line-height: 1.8; }
+
+    .contact-info { background: white; padding: 40px; border-radius: 12px; border: 1px solid #e5e7eb; margin-bottom: 40px; }
+    .contact-info h3 { margin-bottom: 24px; font-size: 1.3rem; font-weight: 700; }
+    .contact-methods { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .contact-method { padding: 20px; background: #f5f7fa; border-radius: 8px; }
+    .contact-method h4 { margin-bottom: 12px; color: #14b8a6; font-weight: 700; }
+    .contact-method p { color: #4a5568; margin-bottom: 8px; }
+    .contact-method a { color: #a855f7; text-decoration: none; font-weight: 600; }
+    .contact-method a:hover { color: #14b8a6; }
+
+    .response-time { background: #d4f8f5; border: 1px solid #99f6e4; border-radius: 8px; padding: 20px; margin-bottom: 40px; }
+    .response-time h4 { color: #0d9488; margin-bottom: 12px; font-weight: 700; }
+    .response-time p { color: #0f766e; }
+
+    footer { background: linear-gradient(135deg, #0f1419 0%, #1a202c 100%); color: #e5e7eb; padding: 80px 0 40px; margin-top: 80px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; margin-bottom: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .footer-col h4 { margin-bottom: 24px; color: white; font-size: 1.05rem; font-weight: 700; }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-link { display: block; padding: 12px 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #d1d5db; text-decoration: none; transition: all 0.2s; font-size: 0.9rem; }
+    .footer-link:hover { background: rgba(20,184,166,0.1); border-color: #14b8a6; color: #14b8a6; }
+
+    .footer-bottom { text-align: center; color: #9ca3af; font-size: 0.9rem; padding-top: 32px; }
+
+    @media (max-width: 1024px) {
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-methods { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .support-grid { grid-template-columns: 1fr; }
+      .page-header h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a href="../index.html" class="brand">
+        <div class="logo-img">⚡</div>
+        <div class="brand-title">
+          <b>FanLitePlay</b>
+          <span>Cricket Entertainment</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="how-to-play.html">How to Play</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="support.html" class="active">Support</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>24/7 Support Center</h1>
+      <p>We're here to help you with any questions or issues</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>How Can We Help?</h2>
+        <p>Choose your preferred support method and get instant assistance</p>
+      </div>
+
+      <div class="support-grid">
+        <div class="support-card">
+          <div class="icon">💬</div>
+          <h3>Live Chat</h3>
+          <p>Chat with our support team in real-time. Available 24/7 for instant assistance.</p>
+          <a href="#">Start Chat →</a>
+        </div>
+        <div class="support-card">
+          <div class="icon">📧</div>
+          <h3>Email Support</h3>
+          <p>Send us an email and we'll respond within 2 hours during business hours.</p>
+          <a href="mailto:support@fanliteplay.com">support@fanliteplay.com</a>
+        </div>
+        <div class="support-card">
+          <div class="icon">📞</div>
+          <h3>Phone Support</h3>
+          <p>Call our support team directly for urgent issues. Mon-Fri 9 AM - 6 PM IST.</p>
+          <a href="tel:+91-1234-567-890">+91-1234-567-890</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Frequently Asked Questions</h2>
+        <p>Find quick answers to common support questions</p>
+      </div>
+
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <h4>📧 Email</h4>
+            <p>support@fanliteplay.com</p>
+            <p style="font-size: 0.85rem; color: #6b7280;">Response time: 2-4 hours</p>
+          </div>
+          <div class="contact-method">
+            <h4>💬 Live Chat</h4>
+            <p>Available on our website</p>
+            <p style="font-size: 0.85rem; color: #6b7280;">Response time: 5-10 minutes</p>
+          </div>
+          <div class="contact-method">
+            <h4>📞 Phone</h4>
+            <p>+91-1234-567-890</p>
+            <p style="font-size: 0.85rem; color: #6b7280;">Mon-Fri: 9 AM - 6 PM IST</p>
+          </div>
+          <div class="contact-method">
+            <h4>🐦 Twitter</h4>
+            <p><a href="#">@FanLitePlay</a></p>
+            <p style="font-size: 0.85rem; color: #6b7280;">DM for quick support</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="response-time">
+        <h4>⏱️ Our Support Response Times</h4>
+        <p>We aim to respond to all inquiries as quickly as possible. Live chat typically responds within 5-10 minutes, email within 2-4 hours, and phone support during business hours.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How do I reset my password?</h4>
+        <p>Click on "Forgot Password" on the login page, enter your email address, and follow the instructions sent to your email. You'll receive a password reset link within 5 minutes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>I'm having trouble logging in. What should I do?</h4>
+        <p>First, ensure you're using the correct email and password. If you've forgotten your password, use the "Forgot Password" option. If you continue to have issues, contact our support team via live chat or email.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can I change my account information?</h4>
+        <p>Yes! You can update your profile information, email, and phone number in the account settings. Some information like date of birth may require verification for security purposes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How do I report a bug or issue?</h4>
+        <p>Please contact our support team with detailed information about the issue, including screenshots if possible. You can report bugs via email, live chat, or our bug report form on the website.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is my personal information secure?</h4>
+        <p>Yes! We use industry-standard encryption and security measures to protect your data. Your information is never shared with third parties without your consent. Read our <a href="privacy.html" style="color: #a855f7;">Privacy Policy</a> for more details.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How can I delete my account?</h4>
+        <p>You can request account deletion through your account settings or by contacting our support team. Please note that this action is permanent and cannot be undone.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Do you offer technical support for app issues?</h4>
+        <p>Yes! If you're experiencing technical issues with our website or app, our support team can help troubleshoot. Please provide details about your device, browser, and the specific issue you're facing.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>What should I do if I encounter a payment issue?</h4>
+        <p>Since FanLitePlay is completely free-to-play, there are no payment issues. However, if you have billing questions or concerns, contact our support team immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>FanLitePlay</h4>
+          <p style="color: #d1d5db; margin-bottom: 20px;">Your ultimate free-to-play cricket entertainment platform.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="../index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About Us</a>
+            <a href="how-to-play.html" class="footer-link">How to Play</a>
+            <a href="blog.html" class="footer-link">Blog</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="support.html" class="footer-link">Help Center</a>
+            <a href="contact.html" class="footer-link">Contact Us</a>
+            <a href="mailto:support@fanliteplay.com" class="footer-link">Email Support</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="terms.html" class="footer-link">Terms & Conditions</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="fair-play.html" class="footer-link">Fair Play Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 FanLitePlay. All rights reserved. | <a href="terms.html" style="color: #14b8a6; text-decoration: none;">Terms</a> | <a href="privacy.html" style="color: #14b8a6; text-decoration: none;">Privacy</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

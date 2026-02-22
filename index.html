@@ -100,37 +100,31 @@
     @media (max-width: 1024px) {
       .trust-grid { grid-template-columns: repeat(2, 1fr); }
       .learn-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .step-item { grid-template-columns: 1fr; }
-      .step-number { width: 100%; }
       .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 2rem; }
     }
 
     @media (max-width: 768px) {
-      .navlinks, .nav-cta { display: none; }
-      .hero h1 { font-size: 2rem; }
-      .section-head h2 { font-size: 2rem; }
-      .trust-grid, .learn-grid, .footer-grid, .disclaimer-boxes { grid-template-columns: 1fr; }
-      .hero-buttons { flex-direction: column; }
+      .navlinks { gap: 1rem; }
+      .nav-cta { flex-direction: column; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .learn-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Top Strip -->
   <div class="top-strip">
     <div class="strip-inner">
-      <div class="strip-badge">
-        <span class="live-dot"></span>
-        100% Free-to-Play
-      </div>
-      <div style="color: #4a5568;">No Real Money • No Prizes • No Wallet • Educational & Entertainment • 18+ Only</div>
+      <div><span class="live-dot"></span><span class="strip-badge">100% Free-to-Play</span></div>
+      <div>No Real Money • No Prizes • No Wallet • Educational & Entertainment • 18+ Only</div>
       <a href="pages/terms.html" class="strip-link">Read Policies</a>
     </div>
   </div>
 
-  <!-- Header -->
   <header>
-    <div class="nav">
+    <nav class="nav">
       <a href="index.html" class="brand">
         <div class="logo-img">⚡</div>
         <div class="brand-title">
@@ -138,37 +132,33 @@
           <span>Cricket Entertainment</span>
         </div>
       </a>
-      
       <div class="navlinks">
         <a href="index.html" class="active">Home</a>
         <a href="pages/about.html">About Us</a>
         <a href="pages/how-to-play.html">How to Play</a>
         <a href="pages/blog.html">Blog</a>
         <a href="pages/contact.html">Contact</a>
+        <a href="pages/support.html">Support</a>
       </div>
-
       <div class="nav-cta">
-        <a href="pages/contact.html" class="btn secondary">Support</a>
-        <a href="#" class="btn secondary">Login</a>
-        <a href="#" class="btn primary">Play Free</a>
+        <a href="pages/login.html" class="btn secondary">Login</a>
+        <a href="pages/register.html" class="btn primary">Play Free</a>
       </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <h1>Cricket <span style="color: #14b8a6;">Unleashed</span></h1>
       <p>Play. Watch. Win. FanLitePlay is your ultimate free-to-play cricket entertainment platform. Master team selection, compete in contests, and track your progress with zero financial risk.</p>
       <div class="hero-buttons">
         <button class="btn primary">Play Free Now</button>
-        <a href="pages/how-to-play.html" class="btn secondary">Learn More</a>
+        <button class="btn secondary">Learn More</button>
       </div>
     </div>
   </section>
 
-  <!-- Trust Metrics -->
-  <section class="section" style="background: #f5f7fa;">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <h2>Why Players Trust FanLitePlay</h2>
@@ -195,8 +185,7 @@
     </div>
   </section>
 
-  <!-- Learn Section -->
-  <section class="section">
+  <section class="section" style="background: #f5f7fa;">
     <div class="container">
       <div class="section-head">
         <h2>Learn & Master Cricket Strategy</h2>
@@ -222,8 +211,7 @@
     </div>
   </section>
 
-  <!-- 5-Step Process -->
-  <section class="section" style="background: #f5f7fa;">
+  <section class="section">
     <div class="container">
       <div class="section-head">
         <h2>5 Simple Steps to Start Playing</h2>
@@ -269,8 +257,7 @@
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section">
+  <section class="section" style="background: #f5f7fa;">
     <div class="container">
       <div class="section-head">
         <h2>Frequently Asked Questions</h2>
@@ -305,20 +292,18 @@
     </div>
   </section>
 
-  <!-- CTA Section -->
   <section class="cta-section">
     <div class="container">
       <h2>Ready to Play?</h2>
       <p>Join thousands of cricket enthusiasts and start your journey with FanLitePlay today. It's free, it's fun, and it's fair.</p>
-      <button class="btn" style="background: white; color: #14b8a6; font-weight: 700;">Play Free Now</button>
+      <button class="btn primary" style="background: white; color: #14b8a6;">Play Free Now</button>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div>
+        <div class="footer-col">
           <div class="footer-brand">
             <div class="footer-logo">⚡</div>
             <div>
@@ -328,32 +313,29 @@
           </div>
           <p class="footer-note">FanLitePlay is a free-to-play cricket entertainment platform designed for skill development and practice. We champion responsible gaming and maintain strict age verification for users 18+.</p>
         </div>
-
         <div class="footer-col">
           <h4>Product</h4>
           <div class="footer-links">
-            <a href="pages/about.html" class="footer-link">About Us</a>
+            <a href="index.html" class="footer-link">About Us</a>
             <a href="pages/how-to-play.html" class="footer-link">How to Play</a>
             <a href="index.html#faq" class="footer-link">FAQ</a>
             <a href="pages/blog.html" class="footer-link">Blog</a>
           </div>
         </div>
-
         <div class="footer-col">
           <h4>Support</h4>
           <div class="footer-links">
             <a href="pages/contact.html" class="footer-link">Contact Us</a>
-            <a href="#" class="footer-link">Help Center</a>
+            <a href="pages/support.html" class="footer-link">Help Center</a>
             <a href="mailto:support@fanliteplay.com" class="footer-link">support@fanliteplay.com</a>
           </div>
         </div>
-
         <div class="footer-col">
           <h4>Legal</h4>
           <div class="footer-links">
             <a href="pages/terms.html" class="footer-link">Terms & Conditions</a>
             <a href="pages/privacy.html" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link">Fair Play Policy</a>
+            <a href="pages/fair-play.html" class="footer-link">Fair Play Policy</a>
           </div>
         </div>
       </div>
@@ -370,12 +352,12 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 FanLitePlay. All rights reserved.</p>
+        <p>© 2026 FanLitePlay. All rights reserved.</p>
         <div class="footer-mini">
           <a href="pages/terms.html">Terms & Conditions</a> • 
           <a href="pages/privacy.html">Privacy Policy</a> • 
-          <a href="#">Fair Play Policy</a> • 
-          <a href="#">Responsible Gaming</a>
+          <a href="pages/fair-play.html">Fair Play Policy</a> • 
+          <a href="pages/responsible-gaming.html">Responsible Gaming</a>
         </div>
       </div>
     </div>

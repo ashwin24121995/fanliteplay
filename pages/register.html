@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - FanLitePlay</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #0f1419; background: linear-gradient(135deg, #ffffff 0%, #d4f8f5 100%); min-height: 100vh; }
+    
+    header { position: sticky; top: 0; z-index: 100; background: white; border-bottom: 1px solid #e5e7eb; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    .brand { display: flex; gap: 12px; align-items: center; text-decoration: none; color: #0f1419; }
+    .logo-img { width: 48px; height: 48px; background: linear-gradient(135deg, #14b8a6, #a855f7); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem; }
+    .brand-title b { font-size: 1.2rem; }
+    .brand-title span { font-size: 0.75rem; color: #8892a8; display: block; }
+    
+    .navlinks { display: flex; gap: 2rem; align-items: center; }
+    .navlinks a { color: #4a5568; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: color 0.2s; }
+    .navlinks a:hover { color: #14b8a6; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    .register-section { padding: 60px 0; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 200px); }
+    .register-card { background: white; padding: 60px; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); max-width: 500px; width: 100%; }
+    .register-card h1 { font-size: 2rem; margin-bottom: 12px; font-weight: 800; }
+    .register-card p { color: #4a5568; margin-bottom: 40px; font-size: 1rem; }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #0f1419; font-size: 0.95rem; }
+    .form-group input, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.2s; }
+    .form-group input:focus, .form-group select:focus { outline: none; border-color: #14b8a6; box-shadow: 0 0 0 3px rgba(20,184,166,0.1); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+    .checkbox-group input { width: 18px; height: 18px; margin-top: 4px; cursor: pointer; }
+    .checkbox-group label { margin: 0; cursor: pointer; font-weight: 500; color: #4a5568; font-size: 0.9rem; }
+
+    .btn { padding: 12px 24px; border-radius: 8px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; display: block; width: 100%; transition: all 0.3s; text-align: center; }
+    .btn.primary { background: linear-gradient(135deg, #14b8a6, #a855f7); color: white; }
+    .btn.primary:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+
+    .login-link { text-align: center; margin-top: 24px; }
+    .login-link p { color: #4a5568; }
+    .login-link a { color: #a855f7; font-weight: 600; text-decoration: none; }
+    .login-link a:hover { color: #14b8a6; }
+
+    .info-box { background: #fef3c7; border: 1px solid #fde68a; border-radius: 8px; padding: 16px; margin-bottom: 24px; color: #92400e; font-size: 0.9rem; }
+
+    .age-warning { background: #fee2e2; border: 1px solid #fecaca; border-radius: 8px; padding: 16px; margin-bottom: 24px; color: #991b1b; font-size: 0.9rem; }
+
+    footer { background: linear-gradient(135deg, #0f1419 0%, #1a202c 100%); color: #e5e7eb; padding: 40px 0; margin-top: 80px; text-align: center; }
+    .footer-link { color: #14b8a6; text-decoration: none; }
+    .footer-link:hover { color: #a855f7; }
+
+    @media (max-width: 768px) {
+      .register-card { padding: 40px 24px; }
+      .register-card h1 { font-size: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <a href="../index.html" class="brand">
+        <div class="logo-img">⚡</div>
+        <div class="brand-title">
+          <b>FanLitePlay</b>
+          <span>Cricket Entertainment</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="how-to-play.html">How to Play</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="register-section">
+    <div class="register-card">
+      <h1>Join FanLitePlay</h1>
+      <p>Create your free account and start playing today</p>
+
+      <div class="age-warning">
+        ⚠️ <strong>Age Verification Required:</strong> FanLitePlay is restricted to users 18 years and above. You must be 18+ to register.
+      </div>
+
+      <div class="info-box">
+        ℹ️ This is a demo registration page. FanLitePlay is completely free with no hidden charges.
+      </div>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" placeholder="John" required>
+          </div>
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" placeholder="Doe" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" required>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" required>
+              <option value="">Select Country</option>
+              <option value="india">India</option>
+              <option value="usa">USA</option>
+              <option value="uk">UK</option>
+              <option value="australia">Australia</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create a strong password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm">Confirm Password</label>
+          <input type="password" id="confirm" placeholder="Re-enter your password" required>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="age" name="age" required>
+          <label for="age">I confirm that I am 18 years or older and eligible to play</label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the <a href="terms.html" style="color: #a855f7; text-decoration: none;">Terms & Conditions</a> and <a href="privacy.html" style="color: #a855f7; text-decoration: none;">Privacy Policy</a></label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="responsible" name="responsible" required>
+          <label for="responsible">I understand this is a free-to-play platform for entertainment and skill development only</label>
+        </div>
+
+        <button type="submit" class="btn primary">Create Account</button>
+      </form>
+
+      <div class="login-link">
+        <p>Already have an account? <a href="login.html">Sign in here</a></p>
+      </div>
+
+      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #e5e7eb; text-align: center; color: #4a5568; font-size: 0.9rem;">
+        <p>🔐 Your data is secure and protected with industry-standard encryption</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 FanLitePlay. All rights reserved. | 
+        <a href="terms.html" class="footer-link">Terms</a> | 
+        <a href="privacy.html" class="footer-link">Privacy</a> | 
+        <a href="contact.html" class="footer-link">Contact</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
